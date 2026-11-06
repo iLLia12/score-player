@@ -1,0 +1,17 @@
+{
+  "name": "score-player",
+  "version": "1.0.0",
+  "description": "Local browser sheet music player",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "fetch-piano": "sh scripts/fetch-piano.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coderline/alphatab": "^1.9.0"
+  },
+  "private": true
+}

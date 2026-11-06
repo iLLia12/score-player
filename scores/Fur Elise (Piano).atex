@@ -1,0 +1,19 @@
+\title("Für Elise")
+\subtitle("Ludwig van Beethoven — WoO 59 (main theme)")
+\tempo(70)
+\track("Piano" "Pno.")
+\instrument("Acoustic Grand Piano")
+\staff {score}
+\clef G2
+\ts(3 8) E5.16 D#5.16 |
+:16 E5 D#5 E5 B4 D5 C5 | A4.8 r.16 C4.16 E4.16 A4.16 | B4.8 r.16 E4.16 G#4.16 B4.16 | C5.8 r.16 E4.16 E5.16 D#5.16 |
+:16 E5 D#5 E5 B4 D5 C5 | A4.8 r.16 C4.16 E4.16 A4.16 | B4.8 r.16 E4.16 C5.16 B4.16 | A4.8 r.8 E5.16 D#5.16 |
+:16 E5 D#5 E5 B4 D5 C5 | A4.8 r.16 C4.16 E4.16 A4.16 | B4.8 r.16 E4.16 G#4.16 B4.16 | C5.8 r.16 E4.16 E5.16 D#5.16 |
+:16 E5 D#5 E5 B4 D5 C5 | A4.8 r.16 C4.16 E4.16 A4.16 | B4.8 r.16 E4.16 C5.16 B4.16 | A4.4{d}
+\staff {score}
+\clef F4
+r.8 |
+r.4{d} | A2.16 E3.16 A3.16 r.16 r.8 | E2.16 E3.16 G#3.16 r.16 r.8 | A2.16 E3.16 A3.16 r.16 r.8 |
+r.4{d} | A2.16 E3.16 A3.16 r.16 r.8 | E2.16 E3.16 G#3.16 r.16 r.8 | A2.16 E3.16 A3.16 r.16 r.8 |
+r.4{d} | A2.16 E3.16 A3.16 r.16 r.8 | E2.16 E3.16 G#3.16 r.16 r.8 | A2.16 E3.16 A3.16 r.16 r.8 |
+r.4{d} | A2.16 E3.16 A3.16 r.16 r.8 | E2.16 E3.16 G#3.16 r.16 r.8 | (A2 E3 A3).4{d}

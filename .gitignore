@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+# Large SoundFonts (>100 MB GitHub limit) — run `npm run fetch-piano`
+soundfonts/*.sf2
+soundfonts/*.sf3

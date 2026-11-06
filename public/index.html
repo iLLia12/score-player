@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Score Player</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">𝄞 Score Player</div>
+    <div class="song-info">
+      <div id="song-title" class="song-title">No score loaded</div>
+      <div id="song-artist" class="song-artist">Open a file or pick one from the library</div>
+    </div>
+    <div class="top-actions">
+      <label class="btn" title="Open a local file">
+        Open file
+        <input id="file-input" type="file" hidden
+          accept=".gp,.gp3,.gp4,.gp5,.gpx,.gp7,.musicxml,.xml,.mxl,.atex,.tex,.cap" />
+      </label>
+      <button id="save-btn" class="btn" disabled title="Save the opened file to your library">Save to library</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <section>
+        <h3>Library</h3>
+        <ul id="library" class="list"></ul>
+        <p class="hint">Drop files anywhere, or put them in the <code>scores/</code> folder.</p>
+      </section>
+      <section>
+        <h3>Tracks</h3>
+        <ul id="tracks" class="list"></ul>
+      </section>
+      <section>
+        <h3>Sound</h3>
+        <label class="field">Piano
+          <select id="piano-sound">
+            <option value="grand">Concert grand</option>
+            <option value="basic">Basic (GM)</option>
+          </select>
+        </label>
+        <div id="sound-status" class="hint"></div>
+        <p class="hint credit">Concert grand: YDP Grand Piano (Yamaha Disklavier Pro) by
+          <a href="https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html" target="_blank" rel="noopener">FreePats</a>,
+          <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC-BY 3.0</a>.</p>
+      </section>
+      <section>
+        <h3>View</h3>
+        <label class="field">Layout
+          <select id="layout">
+            <option value="0">Page</option>
+            <option value="1">Horizontal</option>
+          </select>
+        </label>
+        <label class="field">Notation
+          <select id="stave">
+            <option value="0">Default</option>
+            <option value="1">Score + Tab</option>
+            <option value="2">Score only</option>
+            <option value="3">Tab only</option>
+          </select>
+        </label>
+        <label class="field">Zoom
+          <select id="zoom">
+            <option value="0.6">60%</option>
+            <option value="0.8">80%</option>
+            <option value="1" selected>100%</option>
+            <option value="1.25">125%</option>
+            <option value="1.5">150%</option>
+            <option value="2">200%</option>
+          </select>
+        </label>
+      </section>
+      <section class="shortcuts">
+        <h3>Shortcuts</h3>
+        <div><kbd>Space</kbd> play / pause</div>
+        <div><kbd>L</kbd> loop &nbsp; <kbd>M</kbd> metronome</div>
+        <div><kbd>F</kbd> show / hide fingering</div>
+        <div><kbd>−</kbd>/<kbd>+</kbd> speed &nbsp; <kbd>Esc</kbd> clear selection</div>
+        <div>Click a note to jump, drag to select a passage.</div>
+      </section>
+    </aside>
+
+    <main id="viewport" class="viewport">
+      <div id="score" class="score"></div>
+      <div id="overlay" class="overlay">
+        <div class="overlay-box">
+          <div class="spinner"></div>
+          <div id="overlay-text">Loading…</div>
+        </div>
+      </div>
+      <div id="drop-zone" class="drop-zone"><div>Drop a score to open it</div></div>
+    </main>
+  </div>
+
+  <footer class="player">
+    <div class="transport">
+      <button id="stop" class="icon-btn" title="Back to start" disabled>⏮</button>
+      <button id="play" class="icon-btn play" title="Play / pause (Space)" disabled>▶</button>
+    </div>
+
+    <div class="timeline">
+      <span id="time-cur" class="time">0:00</span>
+      <div id="progress" class="progress"><div id="progress-fill" class="progress-fill"></div></div>
+      <span id="time-end" class="time">0:00</span>
+    </div>
+
+    <div class="controls">
+      <label class="speed" title="Playback speed (− / +)">
+        <span>Speed</span>
+        <input id="speed" type="range" min="25" max="200" step="5" value="100" />
+        <span id="speed-val" class="speed-val">100%</span>
+      </label>
+      <button id="loop" class="toggle" title="Loop (L) — select a passage to loop just that">🔁 Loop</button>
+      <button id="metronome" class="toggle" title="Metronome (M)">🥁 Metronome</button>
+      <button id="countin" class="toggle" title="Count-in before playback">⏱ Count-in</button>
+      <button id="fingering" class="toggle" title="Show suggested piano fingering above notes (F)">🖐 Fingering</button>
+      <label class="volume" title="Master volume">🔊
+        <input id="volume" type="range" min="0" max="100" value="80" />
+      </label>
+    </div>
+  </footer>
+
+  <script src="/alphatab/alphaTab.js"></script>
+  <script src="/fingering.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
